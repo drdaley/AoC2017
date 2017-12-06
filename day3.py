@@ -10,9 +10,9 @@ m = abs(ring%(2*n)-n) #The number of steps along the ring
 # begin part 2 
 def xy_coord(steps,n): #given a number of steps around a ring and the 'n' value of the ring, gives a tuple (x,y)
 	if steps <= 2*n: return (n, -n+steps)
-	elif steps > 2*n and steps <= 4*n : return (n-(steps%(2*n)) , -n)
-	elif steps > 4*n and steps <= 6*n : return (-n,n-(steps%(2*n)))
-	elif steps > 6*n : return (-n+(steps%(2*n)),-n)
+	elif steps > 2*n and steps <= 4*n : return (n-(steps-2*n) , n)
+	elif steps > 4*n and steps <= 6*n : return (-n,n-(steps-4*n))
+	elif steps > 6*n : return (-n+(steps-6*n)),-n)
 	else: print('xy_coord sanity fail')
 
 	
