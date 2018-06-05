@@ -13,10 +13,12 @@ while True :
 	
 	temp_pos = pos
 	#print(temp_pos)
+	temp_inp = l_inp[temp_pos]
 	pos = temp_pos + l_inp[temp_pos]
-	l_inp[temp_pos] = l_inp[temp_pos]+1
+	if temp_inp >= 3: l_inp[temp_pos] = l_inp[temp_pos]-1
+	else: l_inp[temp_pos] = l_inp[temp_pos]+1
 	steps = steps+1
 	#print(l_inp)
-	if pos >= len(l_inp): break
+	if pos >= len(l_inp) or pos < 0: break
 	
 print(steps)
